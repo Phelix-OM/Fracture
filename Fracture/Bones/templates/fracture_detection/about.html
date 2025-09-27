@@ -1,0 +1,300 @@
+{% extends 'fracture_detection/base.html' %}
+
+{% block content %}
+<!-- About Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="display-4 fw-bold">About Bone Fracture Detection AI</h1>
+                <p class="lead">Advanced artificial intelligence for medical image analysis</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mission Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="fw-bold mb-4">Our Mission</h2>
+                <p class="fs-5">
+                    To leverage cutting-edge artificial intelligence technology to assist healthcare professionals 
+                    in detecting bone fractures quickly and accurately, improving patient outcomes through early 
+                    detection and intervention.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Technology Section -->
+<section class="bg-light py-5">
+    <div class="container">
+        <h2 class="text-center fw-bold mb-5">Technology Behind the AI</h2>
+        
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4>Deep Learning Architecture</h4>
+                        <p>
+                            Our system uses a sophisticated convolutional neural network (CNN) based on 
+                            EfficientNet architecture, trained on thousands of medical images to recognize 
+                            patterns indicative of bone fractures.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="feature-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h4>Training Data</h4>
+                        <p>
+                            The model was trained on the Human Bone Fractures Multi-modal Image Dataset (HBFMID), 
+                            containing diverse X-ray and MRI images across multiple anatomical regions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>High Accuracy</h4>
+                        <p>
+                            Achieves over 95% accuracy in fracture detection, with continuous improvement 
+                            through model updates and validation against clinical standards.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Privacy & Security</h4>
+                        <p>
+                            All uploaded images are processed securely with automatic deletion after analysis. 
+                            No patient data is stored permanently on our servers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How It Works Section -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center fw-bold mb-5">How the Detection Works</h2>
+        
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-upload"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h5>1. Image Upload</h5>
+                            <p>User uploads an X-ray, MRI, or CT scan image through our secure portal.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h5>2. Preprocessing</h5>
+                            <p>Image is resized, normalized, and prepared for AI analysis while maintaining diagnostic quality.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h5>3. AI Analysis</h5>
+                            <p>Deep learning model analyzes the image for fracture patterns and features.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h5>4. Result Calculation</h5>
+                            <p>AI generates confidence scores and probability distributions for different conditions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-file-medical-alt"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h5>5. Report Generation</h5>
+                            <p>System creates a comprehensive medical report with recommendations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team/Development Section -->
+<section class="bg-light py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="fw-bold mb-4">Development & Research</h2>
+                <p class="fs-5 mb-4">
+                    This application was developed using state-of-the-art deep learning techniques 
+                    and follows medical AI best practices for reliability and safety.
+                </p>
+                
+                <div class="row mt-5">
+                    <div class="col-md-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h5>Research-Based</h5>
+                        <p>Built on published medical AI research and clinical validation studies</p>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h5>Modern Stack</h5>
+                        <p>Django, TensorFlow, Bootstrap 5 for robust and scalable performance</p>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h5>Clinical Focus</h5>
+                        <p>Designed with healthcare workflows and patient safety in mind</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Disclaimer Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="alert alert-warning">
+                    <h4><i class="fas fa-exclamation-triangle me-2"></i>Important Medical Disclaimer</h4>
+                    <p class="mb-0">
+                        <strong>This AI tool is for assistance and educational purposes only.</strong> 
+                        It is not a substitute for professional medical diagnosis, treatment, or advice. 
+                        Always consult qualified healthcare professionals for medical decisions. 
+                        The developers are not liable for any medical decisions made based on this tool's output.
+                    </p>
+                </div>
+                
+                <div class="alert alert-info">
+                    <h4><i class="fas fa-info-circle me-2"></i>Intended Use</h4>
+                    <p class="mb-0">
+                        This application is designed to assist healthcare professionals in preliminary image analysis. 
+                        It should be used as a supplementary tool alongside clinical expertise and standard diagnostic procedures.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact/Support Section -->
+<section class="bg-primary text-white py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="fw-bold mb-3">Need Help or Have Questions?</h2>
+                <p class="fs-5 mb-4">
+                    Contact our support team for technical assistance or medical professionals for clinical inquiries.
+                </p>
+                <a href="mailto:support@fracturedetection.ai" class="btn btn-light btn-lg">
+                    <i class="fas fa-envelope me-2"></i>Contact Support
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<style>
+.timeline {
+    position: relative;
+    padding-left: 3rem;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+.timeline-icon {
+    position: absolute;
+    left: -3rem;
+    top: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: #667eea;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline-content {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -1.75rem;
+    top: 2.5rem;
+    bottom: -3rem;
+    width: 2px;
+    background: #667eea;
+}
+
+.timeline-item:last-child::before {
+    display: none;
+}
+</style>
+{% endblock %}

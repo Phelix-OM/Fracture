@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: bone-fracture-detector
+    env: python
+    plan: free
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn bone_fracture_detector.wsgi:application"
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: bone_fracture_db
+          property: connectionString

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Bone Fracture Detection AI{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 0;
+        }
+        .feature-icon {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        .result-fracture {
+            border-left: 5px solid #dc3545;
+            background-color: #f8d7da;
+        }
+        .result-normal {
+            border-left: 5px solid #28a745;
+            background-color: #d4edda;
+        }
+        .upload-area {
+            border: 2px dashed #dee2e6;
+            border-radius: 10px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .upload-area:hover {
+            border-color: #667eea;
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <i class="fas fa-bone"></i> Bone Fracture AI
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'upload_image' %}">Detect Fracture</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="fas fa-bone"></i> Bone Fracture Detection AI</h5>
+                    <p>Advanced AI-powered bone fracture detection system.</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p class="mb-0">
+                        <strong>Disclaimer:</strong> This AI tool is for assistance only. 
+                        Always consult healthcare professionals for medical diagnosis.
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p class="mb-0">&copy; 2024 Bone Fracture Detection AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

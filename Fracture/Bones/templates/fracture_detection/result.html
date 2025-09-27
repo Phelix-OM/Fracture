@@ -1,0 +1,88 @@
+{% extends 'fracture_detection/base.html' %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <!-- Result Card -->
+            <div class="card shadow mb-4 {% if result.prediction == 'Fracture Detected' %}result-fracture{% else %}result-normal{% endif %}">
+                <div class="card-header {% if result.prediction == 'Fracture Detected' %}bg-danger{% else %}bg-success{% endif %} text-white">
+                    <h3 class="mb-0"><i class="fas fa-{% if result.prediction == 'Fracture Detected' %}exclamation-triangle{% else %}check-circle{% endif %} me-2"></i>
+                        Analysis Result: {{ result.prediction }}
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5>📊 Confidence Level</h5>
+                            <div class="progress mb-3" style="height: 30px;">
+                                <div class="progress-bar {% if result.prediction == 'Fracture Detected' %}bg-danger{% else %}bg-success{% endif %}" 
+                                     style="width: {{ result.confidence|floatformat:2 }}%">
+                                    {{ result.confidence|floatformat:2 }}%
+                                </div>
+                            </div>
+                            
+                            <h5>🖼️ Uploaded Image</h5>
+                            <img src="{{ detection.image.url }}" alt="Analyzed Image" class="img-fluid rounded shadow">
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <h5>🏥 Medical Report</h5>
+                            <div class="alert alert-{% if medical_report.urgency == 'High' %}danger{% else %}success{% endif %}">
+                                <strong>Diagnosis:</strong> {{ medical_report.diagnosis }}<br>
+                                <strong>Severity:</strong> {{ medical_report.severity }}<br>
+                                <strong>Urgency:</strong> {{ medical_report.urgency }}
+                            </div>
+                            
+                            <h6>📋 Recommendation:</h6>
+                            <p>{{ medical_report.recommendation }}</p>
+                            
+                            <h6>🎯 Next Steps:</h6>
+                            <ul>
+                                {% for step in medical_report.next_steps %}
+                                    <li>{{ step }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Probability Distribution -->
+                    <div class="mt-4">
+                        <h5>📈 Probability Distribution</h5>
+                        <div class="row">
+                            {% for class_name, probability in result.class_probabilities.items %}
+                            <div class="col-md-6 mb-2">
+                                <div class="d-flex justify-content-between">
+                                    <span>{{ class_name }}</span>
+                                    <span>{{ probability|floatformat:4 }}</span>
+                                </div>
+                                <div class="progress" style="height: 10px;">
+                                    <div class="progress-bar" style="width: {{ probability|floatformat:2 }}%"></div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="text-center">
+                <a href="{% url 'upload_image' %}" class="btn btn-primary btn-lg me-3">
+                    <i class="fas fa-redo me-2"></i>Analyze Another Image
+                </a>
+                <a href="{% url 'home' %}" class="btn btn-outline-secondary btn-lg">
+                    <i class="fas fa-home me-2"></i>Back to Home
+                </a>
+            </div>
+            
+            <!-- Disclaimer -->
+            <div class="alert alert-warning mt-4">
+                <strong>⚠️ Important Disclaimer:</strong> This AI analysis is for assistance only. 
+                Always consult with qualified healthcare professionals for medical diagnosis and treatment. 
+                The results provided by this tool should not be used as a substitute for professional medical advice.
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
