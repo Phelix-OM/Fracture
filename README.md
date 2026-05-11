@@ -385,13 +385,6 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ---
 
-## 🙏 Acknowledgments
-
-- **Medical Imaging Community**: For datasets and domain expertise
-- **Deep Learning Pioneers**: TensorFlow, PyTorch, and OpenCV communities
-- **Contributors**: All developers and medical professionals who have contributed
-- **Your Organization**: For supporting this project
-
 ---
 
 ## 📞 Support & Contact
@@ -412,15 +405,6 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 - **Status**: Active Development ✨
 
 ---
-
-## 🌟 Show Your Support
-
-If you find Fracture helpful, please consider:
-- ⭐ Starring the repository
-- 🔗 Sharing with colleagues
-- 📝 Contributing improvements
-- 🐛 Reporting bugs and feedback
-- 📢 Spreading the word in your professional network
 
 ---
 
